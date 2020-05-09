@@ -1,0 +1,31 @@
+@import "_vars"
+
+@mixin font-face($font-family, $url)
+	@font-face
+		font-family: '#{$font-family}'
+		// src: url('#{$url}.eot') // IE9 compat
+		// src: url('#{$url}.eot?#iefix') format('embedded-opentype') // IE8 and below
+		src: url('#{$url}.woff') format('woff') // standards
+		src: url('#{$url}.ttf') format('truetype') // Safari, Android, iOS
+		font-weight: normal
+		font-style: normal
+
+
+@include font-face("OwnHand", "~assets/fonts/OwnHand/OwnHand")
+@include font-face("Adigiana", "~assets/fonts/Adigiana/Adigiana")
+@include font-face("Phantom", "~assets/fonts/Phantom/Phantom")
+@include font-face("MooMoo", "~assets/fonts/MooMoo/MooMoo")
+@include font-face("AngryBirds", "~assets/fonts/AngryBirds/AngryBirds")
+
+@mixin media-xs-only
+	@media (max-width: 599px) 
+		@content
+
+a
+	text-decoration: none !important
+
+.page-enter-active, .page-leave-active
+	transition: opacity .4s
+
+.page-enter, .page-leave-active
+	opacity: 0
